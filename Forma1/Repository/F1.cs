@@ -5,35 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Forma1.Repository
-{/// <summary>
-/// F1 csapatok nyilvantarto osztaly
+{   /// <summary>
+/// A csapat neve
 /// </summary>
     class F1
     {
         /// <summary>
-        /// f1 csapatok
+        /// Az F1 csapatok
         /// </summary>
         List<Team> teams;
-       /// <summary>
-       /// konstruktor
-       /// </summary>
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
         public F1()
         {
             teams = new List<Team>();
-                    
-
         }
         /// <summary>
-        /// létre hozz egy uj csapat nevet
+        /// Létrehozz egy új csapatott az F1-ben
         /// </summary>
-        /// <param name="name">Az uj csapat neve</param>
+        /// <param name="name"> Új csapat neve</param>
         public void add(string name)
         {
             Team t = new Team(name);
             teams.Add(t);
-
-
-
         }
+
+
+
+
     }
 }
