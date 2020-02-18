@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Forma1.Repository
 {   /// <summary>
-/// A csapat neve
+/// Az f1 nyilvantarto osztaly
+/// 
 /// </summary>
     class F1
     {

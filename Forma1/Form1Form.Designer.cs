@@ -93,6 +93,7 @@
             this.buttonAddTeam.TabIndex = 12;
             this.buttonAddTeam.Text = "Hozzáad";
             this.buttonAddTeam.UseVisualStyleBackColor = true;
+            this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);
             // 
             // labelTeamName
             // 
@@ -153,6 +154,7 @@
             this.buttonAddRacer.TabIndex = 20;
             this.buttonAddRacer.Text = "Hozzáad";
             this.buttonAddRacer.UseVisualStyleBackColor = true;
+            this.buttonAddRacer.Click += new System.EventHandler(this.buttonAddRacer_Click);
             // 
             // labelRecer
             // 
