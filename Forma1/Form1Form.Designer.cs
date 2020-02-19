@@ -253,6 +253,7 @@
             this.buttonExit.TabIndex = 29;
             this.buttonExit.Text = "Kilépés";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonComputeTeamSalary
             // 

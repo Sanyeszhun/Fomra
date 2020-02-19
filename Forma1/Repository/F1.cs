@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forma1.MyExeception;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,20 +21,44 @@ namespace Forma1.Repository
         /// </summary>
         public F1()
         {
-            teams = new List<Team>();
+           teams = new List<Team>();
         }
+
+       
+
         /// <summary>
         /// Létrehozz egy új csapatott az F1-ben
         /// </summary>
         /// <param name="name"> Új csapat neve</param>
         public void add(string name)
         {
-            Team t = new Team(name);
-            teams.Add(t);
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba,Team lista nincs peldanyositva");
+            }
+            else
+            {
+                Team t = new Team(name);
+                teams.Add(t);
+            }
         }
 
 
-
-
+        /// <summary>
+        /// A Teamet hozzáadja a Teamek listajahoz
+        /// </summary>
+        /// <param name="t"> A listahoz hozzaadot team</param>
+        public void add(Team t)
+        {
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba,Team lista nincs peldanyositva");
+            }
+            else 
+            {
+                teams.Add(t);
+            }
+         
+        }
     }
 }
