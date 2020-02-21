@@ -2,6 +2,7 @@
 using Forma1.Repository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,21 @@ namespace Forma1.service
             
             }
             
+        }
+
+        public List<Team> getTeams()
+        {
+            try
+            {
+                return f1Repository.getTeams();
+
+            }
+            catch (F1Exeception f1e)
+            {
+
+
+                throw new TeamServiceExcpetion(f1e.Message);
+            }
         }
     }
 }

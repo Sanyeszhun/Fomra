@@ -33,5 +33,10 @@ namespace Forma1
         {
             this.Close();
         }
+
+        private void buttonDeleteTeam_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

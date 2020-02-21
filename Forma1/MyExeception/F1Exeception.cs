@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Forma1.MyExeception;
+namespace Forma1.MyExeception
 {
     [Serializable]
     internal class F1Exeception : Exception

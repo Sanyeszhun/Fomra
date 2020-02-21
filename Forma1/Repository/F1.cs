@@ -43,6 +43,18 @@ namespace Forma1.Repository
             }
         }
 
+        public List<Team> getTeams()
+        {
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba");
+            }else
+            {
+
+                return teams;
+            }
+        }
+
 
         /// <summary>
         /// A Teamet hozzáadja a Teamek listajahoz

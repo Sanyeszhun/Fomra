@@ -1,4 +1,5 @@
 ﻿using Forma1.MyExeception;
+using Forma1.Repository;
 using Forma1.service;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,35 @@ namespace Forma1.controller
 
         TeamService teamService;
 
+        public List<string> getTeamNames()
+        {
+            try
+            {
+                List<Team> teams = teamService.getTeams();
+                return TeamListToTeamNameList(teams);
+
+            }
+            catch(TeamServiceExcpetion tse)
+
+            {
+                Debug.WriteLine(tse.Message);
+                List<string> teamNames = new List<string>();
+                return teamNames;
+
+            }
+        }
+
+        private List<string> TeamListToTeamNameList(List<Team> teams)
+        {
+            List<string> teamNames = new List<string>();
+            foreach (Team t in teams)
+            {
+                teamNames.Add(t.getTeamName());
+           
+
+            }
+            return teamNames;
+        }
 
         public F1Controller() 
         {
