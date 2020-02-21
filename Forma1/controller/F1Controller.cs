@@ -40,6 +40,30 @@ namespace Forma1.controller
             }
         }
 
+        public void deleteTeam(string teamNameToDelet)
+        {
+            try
+            {
+                if (!teamService.IsExsist(teamNameToDelet))
+                {
+                    throw....
+
+
+                }
+                else
+                {
+                    teamService.deleteTeam(teamNameToDelet);
+                }
+            }
+            catch (TeamServiceExcpetion tse)
+            {
+
+                Debug.WriteLine(tse.Message);
+
+            }
+           
+        }
+
         private List<string> TeamListToTeamNameList(List<Team> teams)
         {
             List<string> teamNames = new List<string>();

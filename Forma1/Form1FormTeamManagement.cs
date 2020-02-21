@@ -21,5 +21,22 @@ namespace Forma1
             listBoxTeam.DataSource = controller.getTeamNames();
             textBoxTeamName.Text = string.Empty;
         }
+
+        private void buttonDeleteTeam_Click(object sender, EventArgs e)
+        {
+            if (listBoxTeam.SelectedIndex < 0)
+            {
+                return;
+                
+            }
+            string teamNameToDelet = listBoxTeam.Text;
+            controller.deleteTeam(teamNameToDelet);
+            listBoxTeam.DataSource = null;
+            listBoxTeam.DataSource = controller.getTeamNames();
+           
+        }
+
     }
+
+
 }
