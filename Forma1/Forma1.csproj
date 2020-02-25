@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyExeception\ControllerException.cs" />
     <Compile Include="controller\F1Controller.cs" />
     <Compile Include="Form1FormTeamManagement.cs">
       <SubType>Form</SubType>

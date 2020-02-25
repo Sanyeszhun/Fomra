@@ -54,6 +54,34 @@ namespace Forma1.Repository
                 return teams;
             }
         }
+        /// <summary>
+        /// Ellenőrzi hogy a csapat neve letezik e a listaban
+        /// </summary>
+        /// <param name="teamName">keresett csapat neve</param>
+        /// <returns>true ha igen,false ha nem</returns>
+         public bool IsExsist(string teamName)
+        {
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba");
+            }
+            else 
+            {
+                foreach (Team t in teams)
+                {
+                    if (t.getTeamName() == teamName) 
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        internal int getNumberOfRacers(string teamNameToDelet)
+        {
+            throw new NotImplementedException();
+        }
 
 
         /// <summary>

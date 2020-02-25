@@ -55,5 +55,48 @@ namespace Forma1.service
                 throw new TeamServiceExcpetion(f1e.Message);
             }
         }
+
+        public bool IsExsist(string teamNameToDelet)
+        {
+            try
+            {
+                if (f1Repository.IsExsist(teamNameToDelet)) 
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (F1Exeception f1e)
+            {
+                throw new TeamServiceExcpetion(f1e.Message);
+                
+            }
+        }
+
+        public void deleteTeam(string teamNameToDelet)
+        {
+            try
+            {
+                int numberOfTeamRacers = f1Repository.getNumberOfRacers(teamNameToDelet);
+                if (numberOfTeamRacers > 0)
+                {
+                    throw new TeamServiceExcpetion(teamNameToDelet + "Csapatott nem lehet torolni mert vannak meg versenyzoik");
+                }
+                else 
+                {
+                    f1Repository.delete(teamNameToDelet);
+                
+                }
+            }
+            catch (F1Exeception f1e)
+            {
+
+                throw new TeamServiceExcpetion(f1e.Message);
+            }
+        }
     }
 }

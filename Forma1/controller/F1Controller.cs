@@ -46,14 +46,23 @@ namespace Forma1.controller
             {
                 if (!teamService.IsExsist(teamNameToDelet))
                 {
-                    throw....
-
+                    throw new ControllerException(teamNameToDelet + " csapat nem letezik nemlehet torolni");
+                        
 
                 }
                 else
                 {
-                    teamService.deleteTeam(teamNameToDelet);
+                    try
+                    {
+                        teamService.deleteTeam(teamNameToDelet);
+                    }
+                    catch (TeamServiceExcpetion tse)
+                    {
+
+                     .......
+                    }
                 }
+                
             }
             catch (TeamServiceExcpetion tse)
             {
