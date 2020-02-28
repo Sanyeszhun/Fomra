@@ -84,7 +84,8 @@ namespace Forma1.service
                 int numberOfTeamRacers = f1Repository.getNumberOfRacers(teamNameToDelet);
                 if (numberOfTeamRacers > 0)
                 {
-                    throw new TeamServiceExcpetion(teamNameToDelet + "Csapatott nem lehet torolni mert vannak meg versenyzoik");
+
+                    throw new TeamServiceToGUIExcpetion(teamNameToDelet + "Csapatott nem lehet torolni mert vannak meg versenyzoik");
                 }
                 else 
                 {

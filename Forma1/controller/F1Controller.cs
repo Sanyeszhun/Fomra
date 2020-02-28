@@ -59,7 +59,15 @@ namespace Forma1.controller
                     catch (TeamServiceExcpetion tse)
                     {
 
-                     .......
+
+                        Debug.WriteLine(tse.Message);
+
+                    }
+                    catch (TeamServiceToGUIExcpetion tsge)
+                    {
+                        throw new ControllerException(tsge.Message);
+                      
+
                     }
                 }
                 

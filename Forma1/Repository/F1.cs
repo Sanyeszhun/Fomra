@@ -1,6 +1,7 @@
 ﻿using Forma1.MyExeception;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Forma1.Repository
            teams = new List<Team>();
         }
 
-       
+
 
         /// <summary>
         /// Létrehozz egy új csapatott az F1-ben
@@ -77,10 +78,72 @@ namespace Forma1.Repository
                 return false;
             }
         }
-
-        internal int getNumberOfRacers(string teamNameToDelet)
+        /// <summary>
+        /// Adot nevu team torlese a listabol
+        /// Tanar ur szerint van benne egy bug
+        /// </summary>
+        /// <param name="teamNameToDelet"></param>
+        public void delete(string teamNameToDelet)
         {
-            throw new NotImplementedException();
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba,teamlist");
+            }
+            else
+            {
+                int index = 0;
+                foreach (Team t in teams)
+                {
+
+                    if (t.getTeamName() == teamNameToDelet)
+                    {
+                        teams.RemoveAt(index);
+                        index = index + 1;
+
+
+
+                    }
+
+                        
+                }
+                
+                throw new F1Exeception(teamNameToDelet + "Csapat nem letezik");
+             
+            }
+        }
+
+        /// <summary>
+        /// TeamName csapat versenyzonek szama 
+        /// </summary>
+        /// <param name="teamName">A csapat neve</param>
+        /// <returns>A csapat versenyzoinek szama</returns>
+        public int getNumberOfRacers(string teamName)
+        {
+            if (teams == null)
+            {
+                throw new F1Exeception("Végzetes hiba,teamlist");
+            }
+            else
+            {
+                foreach (Team t in teams)
+                {
+                    if (t.getTeamName() == teamName)
+                    {
+                        try
+                        {
+                            return t.getNumberOfRacers();
+                        }
+                        catch (TeamException te)
+                        {
+                            Debug.WriteLine(te.Message);
+                            throw new F1Exeception(teamName + "Csapatot nem lehet torolni!");
+                        }
+
+                    }
+                   
+                }
+                throw new F1Exeception(teamName + "Csapat nem letezik.");
+            }
         }
 
 
