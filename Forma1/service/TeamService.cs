@@ -99,5 +99,21 @@ namespace Forma1.service
                 throw new TeamServiceExcpetion(f1e.Message);
             }
         }
+
+        public void modilfyTeamName(string oldTeamName, string newTeamName)
+        {
+            try
+            {
+
+                f1Repository.update(oldTeamName, newTeamName);
+
+
+            }
+            catch (F1Exeception f1e)
+            {
+
+                throw new TeamServiceExcpetion(f1e.Message);
+            }
+        }
     }
 }

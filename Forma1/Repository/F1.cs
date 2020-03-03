@@ -99,7 +99,7 @@ namespace Forma1.Repository
                     {
                         teams.RemoveAt(index);
                         index = index + 1;
-
+                        return;
 
 
                     }
@@ -110,6 +110,36 @@ namespace Forma1.Repository
                 throw new F1Exeception(teamNameToDelet + "Csapat nem letezik");
              
             }
+        }
+
+        public void update(string oldTeamName, string newTeamName)
+        {
+            if (teams == null)
+            {
+
+                throw new F1Exeception("Végzetes hiba");
+
+
+            }
+            else 
+            {
+                foreach (Team t in teams) 
+                {
+
+                    if (t.getTeamName() == oldTeamName) 
+                    {
+                        t.update(newTeamName);
+                        return;
+                    }
+
+                }
+                throw new F1Exeception(oldTeamName + "Csapat nem talalhato nem lehet modositani");
+            
+            }
+
+
+
+           
         }
 
         /// <summary>

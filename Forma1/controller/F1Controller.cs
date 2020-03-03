@@ -81,6 +81,25 @@ namespace Forma1.controller
            
         }
 
+        public void modiflyTeamName(string oldTeamName, string newTeamName)
+        {
+            try
+            {
+                if (teamService.IsExsist(newTeamName))
+                {
+                    throw new ControllerException(newTeamName + "Nevu csapat mar letezik erre a nevre nem lehet modositani");
+                    teamService.modilfyTeamName(oldTeamName, newTeamName);
+                }
+                teamService.modilfyTeamName(oldTeamName, newTeamName);
+            }
+            catch (TeamServiceExcpetion tse)
+            {
+
+                Debug.WriteLine(tse.Message);
+
+            }
+        }
+
         private List<string> TeamListToTeamNameList(List<Team> teams)
         {
             List<string> teamNames = new List<string>();

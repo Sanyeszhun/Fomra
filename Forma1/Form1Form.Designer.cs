@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonInitializeData = new System.Windows.Forms.Button();
             this.buttonDeleteTeam = new System.Windows.Forms.Button();
             this.buttonUpdateTeam = new System.Windows.Forms.Button();
@@ -55,7 +56,11 @@
             this.buttonComputeF1Salary = new System.Windows.Forms.Button();
             this.textBoxF1Salary = new System.Windows.Forms.TextBox();
             this.buttonMoveToTeam = new System.Windows.Forms.Button();
+            this.errorProviderDeleteTeam = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderModosit = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDeleteTeam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModosit)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonInitializeData
@@ -85,6 +90,7 @@
             this.buttonUpdateTeam.TabIndex = 13;
             this.buttonUpdateTeam.Text = "Módosít";
             this.buttonUpdateTeam.UseVisualStyleBackColor = true;
+            this.buttonUpdateTeam.Click += new System.EventHandler(this.buttonUpdateTeam_Click);
             // 
             // buttonAddTeam
             // 
@@ -299,6 +305,14 @@
             this.buttonMoveToTeam.Text = "csapatba átrak.";
             this.buttonMoveToTeam.UseVisualStyleBackColor = true;
             // 
+            // errorProviderDeleteTeam
+            // 
+            this.errorProviderDeleteTeam.ContainerControl = this;
+            // 
+            // errorProviderModosit
+            // 
+            this.errorProviderModosit.ContainerControl = this;
+            // 
             // Form1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +340,8 @@
             this.Text = "Forma 1.";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDeleteTeam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderModosit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,6 +376,8 @@
         private System.Windows.Forms.Button buttonComputeF1Salary;
         private System.Windows.Forms.TextBox textBoxF1Salary;
         private System.Windows.Forms.Button buttonMoveToTeam;
+        private System.Windows.Forms.ErrorProvider errorProviderDeleteTeam;
+        private System.Windows.Forms.ErrorProvider errorProviderModosit;
     }
 }
 

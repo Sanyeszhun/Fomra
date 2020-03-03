@@ -49,5 +49,10 @@ namespace Forma1.Repository
             throw new TeamException("Végzetes hiba a racers lista nicns peldanyositva");
             return racers.Count;
         }
+
+        public void update(string newTeamName)
+        {
+            name = newTeamName;
+        }
     }
 }
