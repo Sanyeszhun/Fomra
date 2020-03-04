@@ -24,10 +24,7 @@ namespace Forma1
             InitializeComponent();
         }
 
-        private void buttonAddRacer_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void buttonExit_Click(object sender, EventArgs e)
         {

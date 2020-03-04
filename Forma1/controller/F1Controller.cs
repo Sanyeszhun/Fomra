@@ -16,7 +16,7 @@ namespace Forma1.controller
 /// Feldata a programozonak szánt hiba uzenetek megjelenitese
 /// 
 /// </summary>
-    class F1Controller
+    partial class F1Controller
     {
        
 
@@ -39,6 +39,8 @@ namespace Forma1.controller
 
             }
         }
+
+       
 
         public void deleteTeam(string teamNameToDelet)
         {

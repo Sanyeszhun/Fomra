@@ -58,9 +58,11 @@
             this.buttonMoveToTeam = new System.Windows.Forms.Button();
             this.errorProviderDeleteTeam = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderModosit = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderAddRacer = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDeleteTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderModosit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddRacer)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonInitializeData
@@ -80,7 +82,6 @@
             this.buttonDeleteTeam.TabIndex = 14;
             this.buttonDeleteTeam.Text = "Töröl";
             this.buttonDeleteTeam.UseVisualStyleBackColor = true;
-            this.buttonDeleteTeam.Click += new System.EventHandler(this.buttonDeleteTeam_Click);
             // 
             // buttonUpdateTeam
             // 
@@ -161,7 +162,7 @@
             this.buttonAddRacer.TabIndex = 20;
             this.buttonAddRacer.Text = "Hozzáad";
             this.buttonAddRacer.UseVisualStyleBackColor = true;
-            this.buttonAddRacer.Click += new System.EventHandler(this.buttonAddRacer_Click);
+            this.buttonAddRacer.Click += new System.EventHandler(this.buttonAddRacer_Click_1);
             // 
             // labelRecer
             // 
@@ -313,6 +314,10 @@
             // 
             this.errorProviderModosit.ContainerControl = this;
             // 
+            // errorProviderAddRacer
+            // 
+            this.errorProviderAddRacer.ContainerControl = this;
+            // 
             // Form1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +347,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDeleteTeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderModosit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddRacer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,6 +384,7 @@
         private System.Windows.Forms.Button buttonMoveToTeam;
         private System.Windows.Forms.ErrorProvider errorProviderDeleteTeam;
         private System.Windows.Forms.ErrorProvider errorProviderModosit;
+        private System.Windows.Forms.ErrorProvider errorProviderAddRacer;
     }
 }
 

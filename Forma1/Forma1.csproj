@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\F1RacerManagement.cs" />
+    <Compile Include="Form1FormRacerManagement .cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MyExeception\ControllerException.cs" />
     <Compile Include="controller\F1Controller.cs" />
     <Compile Include="Form1FormTeamManagement.cs">
